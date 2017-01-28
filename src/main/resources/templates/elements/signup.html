@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content=""></meta>
+<meta name="author" content=""></meta>
+<link rel="icon" href="../../favicon.ico"></link>
+
+<title>Stomatologie</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+
+
+<!-- Custom styles for this template -->
+<link href="css/main.css" rel="stylesheet"></link>
+
+</head>
+
+<body>
+
+	<form class="content" th:fragment="signup" method="post"
+		th:action="@{/signup}" th:object="${siteUser}">
+		<div class="col-md-4">
+			<fieldset>
+				<legend class="text-center"> User registration</legend>
+
+				<div th:if="${#fields.hasErrors('firstName')}"
+					th:errors="*{firstName}">Name Error</div>
+
+				<div class="input-group input-group-sm">
+					<span class="input-group-addon" id="sizing-addon3">First
+						name</span><input type="text" class="form-control"
+						placeholder="First name" aria-describedby="sizing-addon3"
+						th:field="*{firstName}"></input>
+
+				</div>
+
+				<div th:if="${#fields.hasErrors('lastName')}"
+					th:errors="*{lastName}">Name Error</div>
+
+				<div class="input-group input-group-sm">
+					<span class="input-group-addon" id="sizing-addon3">Last name</span>
+					<input type="text" class="form-control" placeholder="Last name"
+						aria-describedby="sizing-addon3" th:field="*{lastName}"></input>
+				</div>
+
+				<div th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email
+					Error</div>
+
+				<div class="input-group input-group-sm">
+					<span class="input-group-addon" id="sizing-addon3">Email</span><input
+						type="text" class="form-control" placeholder="Email"
+						aria-describedby="sizing-addon3" th:field="*{email}"></input>
+				</div>
+
+				<div th:if="${#fields.hasErrors('password')}"
+					th:errors="*{password}">Name Error</div>
+				<div id='message'></div>
+
+				<div class="input-group input-group-sm">
+					<span class="input-group-addon" id="sizing-addon3">Password</span><input
+						type="password" class="form-control" placeholder="Password"
+						aria-describedby="sizing-addon3" th:field="*{password}"
+						id="password" name="password"></input>
+
+				</div>
+
+				<div class="input-group input-group-sm">
+					<span class="input-group-addon" id="sizing-addon3"> Confirm
+						Password</span><input type="password" class="form-control"
+						aria-describedby="sizing-addon3"
+						name="confirm_password"
+						id="confirm_password"></input>
+
+				</div>
+
+				<div th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}">Name
+					Error</div>
+
+				<ul>
+					<p style="float: left;">
+						Gender <span th:each="gender : ${genders}"><input
+							type="radio" th:field="*{gender}" th:value="${gender}" /> <label
+							th:for="${#ids.prev('gender')}"
+							th:text="${gender.name().charAt(0)}"></label></span>
+					</p>
+				</ul>
+
+				<br> <br>
+				<div>
+					<input type="submit" value="Submit"></input>
+				</div>
+				</br> </br>
+
+
+			</fieldset>
+		</div>
+
+	</form>
+
+</body>
+</html>
