@@ -1,4 +1,4 @@
-package ro.siit.stoma.domain;
+package ro.siit.stoma.appointment.domain;
 
 public abstract class AbstractModel {
 	private long id;
@@ -10,6 +10,5 @@ public abstract class AbstractModel {
 	public void setId(long id) {
 		this.id = id;
 	}
-	
-
 }
+

@@ -1,12 +1,12 @@
-package ro.siit.stoma.dao.inmemory;
+package ro.siit.stoma.appointment.dao.inmemory;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
-import ro.siit.stoma.dao.BaseDAO;
-import ro.siit.stoma.domain.AbstractModel;
+import ro.siit.stoma.appointment.dao.BaseDAO;
+import ro.siit.stoma.appointment.domain.AbstractModel;
 
 public abstract class IMBaseDAO<T extends AbstractModel> implements BaseDAO<T> {
 	private Map<Long, T> models = new HashMap<Long, T>();
