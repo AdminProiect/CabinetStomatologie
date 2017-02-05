@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" /></meta>
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content=""></meta>
+<meta name="author" content=""></meta>
+<link rel="icon" href="../../favicon.ico"></link>
+ <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.js"></script>
+ 
+<title>List Appointments</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+
+<!-- Custom styles for this template -->
+<link href="css/main.css" rel="stylesheet"></link>
+
+ 
+</head>
+
+<body>
+
+	<div th:replace="fragments/header :: header"></div>
+	<div th:replace="fragments/menu :: sidemenu"></div>
+
+	<div class="container">
+  	  	<form th:action="@{/patient/save}" th:object="${patient}" method="POST">
+  	  		<label for="name">First Name</label>
+    		<div class="input-group" style="width:80%">
+		  		<input type="text"  id="name" name="name" class="form-control" placeholder="First Name" aria-describedby="basic-addon1" th:field="*{name}"/>
+			</div>
+			
+			<label for="name">Last Name</label>
+    		<div class="input-group" style="width:80%">
+		  		<input type="text"  id="name" name="name" class="form-control" placeholder="Last Name" aria-describedby="basic-addon1" th:field="*{name}"/>
+			</div>
+			
+			<label for="cnp">Cnp</label>
+    		<div class="input-group" style="width:80%">
+		  		<input type="text"  id="cnp" name="cnp" class="form-control" placeholder="Cnp" aria-describedby="basic-addon1" th:field="*{cnp}"/>
+			</div>
+			
+			<label for="address">Address</label>
+    		<div class="input-group" style="width:80%">
+		  		<input type="text"  id="address" name="address" class="form-control" placeholder="Address" aria-describedby="basic-addon1" th:field="*{address}"/>
+			</div>
+			
+			<label for="gender">Gender</label>
+    		<div class="input-group" style="width:80%">
+		  		<input type="text"  id="gender" name="gender" class="form-control" placeholder="Gender" aria-describedby="basic-addon1" th:field="*{gender}"/>
+			</div>
+			
+			<label for="phone">Telephone</label>
+    		<div class="input-group" style="width:80%">
+		  		<input type="text"  id="phone" name="phone" class="form-control" placeholder="Telephone" aria-describedby="basic-addon1" th:field="*{phone}"/>
+			</div>
+			
+			<label for="email">Email</label>
+    		<div class="input-group" style="width:80%">
+		  		<input type="text"  id="email" name="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1" th:field="*{email}"/>
+			</div>
+			
+			<label for="doctor">Doctor in charge</label>
+    		<div class="input-group" style="width:80%">
+		  		<input type="text"  id="doctor" name="doctor" class="form-control" placeholder="Doctor in charge" aria-describedby="basic-addon1" th:field="*{doctor}"/>
+			</div>
+			
+			<label for="pPathology">Patient Pathology</label>
+    		<div class="input-group" style="width:80%">
+		  		<input type="text"  id="pPathology" name="pPathology" class="form-control" placeholder="Patient Pathology" aria-describedby="basic-addon1" th:field="*{pPathology}"/>
+			</div>
+			
+			<label for="pPhysiology">Patient Physiology</label>
+    		<div class="input-group" style="width:80%">
+		  		<input type="text"  id="pPhysiology" name="pPhysiology" class="form-control" placeholder="Patient Physiology" aria-describedby="basic-addon1" th:field="*{pPhysiology}"/>
+			</div>
+			
+			<label for="visit">Visit Reason</label>
+    		<div class="input-group" style="width:80%">
+		  		<input type="text"  id="visit" name="visit" class="form-control" placeholder="Visit Reason" aria-describedby="basic-addon1" th:field="*{vist}"/>
+			</div>
+			
+			
+			
+			<input type="hidden" name="id" th:value="*{id}"/>
+			<input type="submit" value="Save"/>
+			<a href="/patient">Cancel</a>
+			
+			
+  		</form>
+	</div>
+
+
+	<footer class="footer">
+		<div class="container">
+			<div th:replace="fragments/footer :: footer">Patients list.</div>
+		</div>
+	</footer>
+	<!-- /container -->
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/check.js"></script>
+	
+</body>
+</html>
+
